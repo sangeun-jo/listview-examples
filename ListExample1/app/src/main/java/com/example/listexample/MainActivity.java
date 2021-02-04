@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> items;
     private ArrayAdapter adapter;
     private ListView listview;
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.add:
-               items.add("LIST" + (items.size() + 1));
+               items.add("LIST" + (++count));
                adapter.notifyDataSetChanged();
                 break;
             case R.id.edit:
